@@ -8,7 +8,7 @@ keymap.set("i", "jk", "<ESC>") -- esc
 
 keymap.set("n", "<leader>nh", ":nohl<CR>") -- deselect 
 
-keymap.set("n", "x", '"_x') -- Cut without copy to the lipboard
+keymap.set("n", "x", '"_x') -- delete single character without copying into the register 
 
 keymap.set("n", "<leader>+", "<C-a>") -- Increment numbers
 keymap.set("n", "<leader>-", "<C-x>") -- Decrement numbers
