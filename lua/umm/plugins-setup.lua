@@ -80,7 +80,14 @@ return packer.startup(function(use)
   use({ "glepnir/lspsaga.nvim", branch = "main" })
   use("jose-elias-alvarez/typescript.nvim")
   use("onsails/lspkind.nvim")
-
+  --treesitter
+  use({
+    'nvim-treesitter/nvim-treesitter',
+    run = function()
+        local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
+        ts_update()
+    end,
+  })
   if packer_bootstrap then
     require("packer").sync()
   end
