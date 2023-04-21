@@ -8,6 +8,11 @@ if not mason_lspconfig_status then
   return
 end
 
+local mason_null_ls_status, mason_null_ls = pcall(require, "mason-null-ls")
+if not mason_null_ls_status then
+  return
+end
+
 mason.setup({
   PATH = "prepend"
 })
@@ -28,5 +33,16 @@ mason_lspconfig.setup({
     "bashls",
     "cmake"},
   -- auto-install configured servers (with lspconfig)
-  automatic_installation = true, -- not the same as ensure_installed
+  automatic_installation = true, -- not the ssame as ensure_installed
   })
+
+mason_null_ls.setup({
+  ensure_installed = {
+    "prettier",
+    "stylua",
+    "eslint_d",
+    "black",
+    "pylint",
+    "isort"
+  }
+})

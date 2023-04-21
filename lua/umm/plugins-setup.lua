@@ -88,6 +88,11 @@ return packer.startup(function(use)
         ts_update()
     end,
   })
+
+  -- formating & linting
+  use("jose-elias-alvarez/null-ls.nvim")
+  use("jayp0521/mason-null-ls.nvim")
+
   if packer_bootstrap then
     require("packer").sync()
   end
